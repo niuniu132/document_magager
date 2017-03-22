@@ -5,7 +5,7 @@
   <%= f.error_notification %>
 
     <div class="form-inputs">
-      <%= f.input :email, required: true, autofocus: true , label: '邮箱地址', hint: ('请输入电子邮件地址')%>
+      <%= f.input :username, required: true, autofocus: true , label: '用户名', hint: ('请输入用户名')%>
       <%= f.input :password, required: true, label: '密码',hint: ("不能少于#{@minimum_password_length}位 " if @minimum_password_length) %>
       <%= f.input :password_confirmation, required: true , label: '确认密码'%>
     </div>
