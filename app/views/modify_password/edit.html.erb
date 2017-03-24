@@ -1,0 +1,11 @@
+<div class="col-md-4 col-md-offset-4">
+<h2>修改密码</h2>
+<br>
+<%= simple_form_for @user, url: modify_password_path, method: :patch do |f| %>
+  <div class="form-inputs">
+    <%= f.input :password, label: "新密码", required: true, autofocus: true %>
+    <%= f.input :password_confirmation, label: "确认新密码", required: true %>
+  </div>
+  <%= f.submit '提交', data: { disable_with: "提交中..."}  %>
+<% end %>
+</div>

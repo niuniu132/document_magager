@@ -8,6 +8,9 @@
 
 
 
+# User.create!(
+#    username:'admin',password: "111111", password_confirmation:'111111' ,email:'11@11.com'
+#    )
 User.create!(
-   username:'admin',password: "111111", password_confirmation:'111111' ,email:'11@11.com'
+   username:'admin',password: "111111", password_confirmation:'111111',email:'1@1',is_admin: true
    )
