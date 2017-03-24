@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root "welcome#index"
   resources :trades
   resources :modify_password
+  resources :user_managements
 end
