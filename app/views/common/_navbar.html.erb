@@ -20,6 +20,8 @@
                     <ul class="dropdown-menu">
                         <% if current_user.is_admin==true %>
                            <li> <%= link_to("用户管理", user_managements_path) %> </li>
+                        <% else%>
+                           <li> <%= link_to("文档管理", user_index_documents_path) %> </li>
                         <% end %>
                         <li> <%= link_to("修改密码", edit_modify_password_path(current_user)) %> </li>
                         <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>

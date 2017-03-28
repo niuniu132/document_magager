@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates_uniqueness_of :username
+  has_many :documents, dependent: :destroy
 
   def email_required?
       false
@@ -17,5 +18,5 @@ class User < ApplicationRecord
   def admin?
     is_admin
   end
-  
+
 end

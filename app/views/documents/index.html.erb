@@ -1,0 +1,24 @@
+
+<h1 style='text-align:center'>欢迎访问雅安市商业银行文档管理平台</h1>
+
+<br>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <td>文件名</td>
+      <td>创建时间</td>
+      <td>分类</td>
+
+
+    </tr>
+  </thead>
+<% @documents.each do |document| %>
+  <tr>
+    <td><%= link_to(document.file_name, document.file_url) %></td>
+    <td><%= document.created_at %></td>
+    <td><%= document.file_type %></td>
+
+  </tr>
+<% end %>
+</table>
