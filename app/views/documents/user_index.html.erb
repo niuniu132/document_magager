@@ -7,16 +7,16 @@
     <tr>
       <td>文件名</td>
       <td>创建时间</td>
-      <td>文件</td>
+      
       <td>编辑文件</td>
       <td>删除文件</td>
     </tr>
   </thead>
 <% @documents.each do |document| %>
   <tr>
-    <td><%= document.file_name %></td>
+    <td><%= link_to(document.file_name, document.file_url) %></td>
     <td><%= document.created_at %></td>
-    <td><%= document.file_url %></td>
+
     <td><%= link_to('编辑', '#') %></td>
     <td><%= link_to('删除文件', '#') %></td>
   </tr>

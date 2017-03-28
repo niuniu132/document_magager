@@ -9,7 +9,7 @@
       <td>文件名</td>
       <td>创建时间</td>
       <td>分类</td>
-
+      <td>发布者</td>
 
     </tr>
   </thead>
@@ -18,7 +18,7 @@
     <td><%= link_to(document.file_name, document.file_url) %></td>
     <td><%= document.created_at %></td>
     <td><%= document.file_type %></td>
-
+    <td><%= document.user.username %></td>
   </tr>
 <% end %>
 </table>
