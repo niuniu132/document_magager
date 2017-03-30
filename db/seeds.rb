@@ -14,3 +14,7 @@
 User.create!(
    username:'admin',password: "111111", password_confirmation:'111111',is_admin: true
    )
+
+   User.create!(
+      username:'运营管理部',password: "111111", password_confirmation:'111111'
+      )

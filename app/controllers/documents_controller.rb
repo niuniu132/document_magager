@@ -3,8 +3,10 @@ class DocumentsController < ApplicationController
     before_action :authenticate_user! , only: [:create, :edit, :update, :new]
 
     def index
-      @documents = Document.all
+      @documents = Document.all.paginate(:page => params[:page], :per_page => 3)
     end
+
+
 
     def user_index
       @documents = Document.where(:user_id => current_user.id)
