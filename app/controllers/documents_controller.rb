@@ -19,9 +19,31 @@ class DocumentsController < ApplicationController
       @document.user_id = @user.id
       if @document.save
         flash[:notice]='文档发布成功！'
-        redirect_to documents_path
+        redirect_to user_index_documents_path
       else
         render :new
+      end
+    end
+
+    def edit
+      @document = Document.find(params[:id])
+    end
+
+    def update
+      @document = Document.find(params[:id])
+      if @document.update(document_params)
+        flash[:notice]='文档编辑成功！'
+        redirect_to user_index_documents_path
+      else
+        render :edit
+      end
+    end
+
+    def destroy
+      @document = Document.find(params[:id])
+      if @document.destroy
+        flash[:notice]='文档删除成功！'
+        redirect_to user_index_documents_path
       end
     end
 

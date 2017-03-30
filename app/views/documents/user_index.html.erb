@@ -7,7 +7,7 @@
     <tr>
       <td>文件名</td>
       <td>创建时间</td>
-      
+
       <td>编辑文件</td>
       <td>删除文件</td>
     </tr>
@@ -17,8 +17,8 @@
     <td><%= link_to(document.file_name, document.file_url) %></td>
     <td><%= document.created_at %></td>
 
-    <td><%= link_to('编辑', '#') %></td>
-    <td><%= link_to('删除文件', '#') %></td>
+    <td><%= link_to('编辑', edit_document_path(document)) %></td>
+    <td><%= link_to('删除文件', document_path(document), :method => :delete, :data => { :confirm => "确定删除?"}) %></td>
   </tr>
 <% end %>
 </table>

@@ -18,7 +18,7 @@
   <td><%= user.created_at%></td>
   <td><%= link_to('修改用户名密码', edit_user_management_path(user))%></td>
 
-  <td><%= link_to('删除用户', user_management_path(user), :method => :delete, :data => { :confirm => "确定删除?" })%></td>
+  <td><%= link_to('删除用户', user_management_path(user), :method => :delete, :data => { :confirm => "删除用户将删除该用户所有共享文件，确定删除?" })%></td>
 </tr>
 <% end %>
 </table>
