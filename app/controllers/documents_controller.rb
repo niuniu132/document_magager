@@ -1,4 +1,5 @@
 class DocumentsController < ApplicationController
+    before_action :validate_search_key, only: [:search]
     before_action :authenticate_user! , only: [:create, :edit, :update, :new]
 
     def index
@@ -12,6 +13,10 @@ class DocumentsController < ApplicationController
     def new
       @document = Document.new
     end
+
+    def search
+		    @documents = Document.ransack({:file_name_cont => @q}).result(:distinct => true)
+	  end
 
     def create
       @user = current_user
@@ -52,4 +57,14 @@ class DocumentsController < ApplicationController
     def document_params
       params.require(:document).permit(:file_name, :file_type, :file)
     end
+
+    protected
+
+    def validate_search_key
+      @q = params[:query_string].gsub(/\|\'|\/|\?/, "") if params[:query_string].present?
+      puts '---------'
+      puts @q
+    end
+
+
 end

@@ -12,6 +12,7 @@ gem 'rails', '~> 5.0.1'
 gem 'sqlite3'
 gem 'carrierwave'
 gem 'ransack'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -39,6 +40,10 @@ gem 'jbuilder', '~> 2.5'
 gem "bootstrap-sass"
 gem "devise"
 gem 'simple_form'
+gem 'font-awesome-rails'
+gem 'awesome_rails_console'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :documents do
     collection do
       get :user_index
+      get :search
     end
   end
 end

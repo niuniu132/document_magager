@@ -1,6 +1,13 @@
 
 <h1 style='text-align:center'>欢迎访问雅安市商业银行文档管理平台</h1>
-
+<!-- Search area -->
+      <%= form_tag search_documents_path , :method => :get do %>
+        <input type="text", class="search-input", name="query_string" value="<%= params[:q] %>" placeholder="请输入文件名搜索...">
+        <button type="submit" class="search-icon">
+          搜索
+        </button>
+      <% end %>
+  <!-- End Search -->
 <br>
 <br>
 <table class="table">
