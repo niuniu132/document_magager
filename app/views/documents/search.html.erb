@@ -12,12 +12,17 @@
 
     </tr>
   </thead>
-<% @documents.each do |document| %>
-  <tr>
-    <td><%= link_to(document.file_name, document.file_url) %></td>
-    <td><%= document.created_at %></td>
-    <td><%= document.file_type %></td>
-    <td><%= document.user.username %></td>
-  </tr>
-<% end %>
+  <% if @documents.present? %>
+    <% @documents.each do |document| %>
+      <tr>
+        <td><%= link_to(document.file_name, document.file_url) %></td>
+        <td><%= document.created_at %></td>
+        <td><%= document.file_type %></td>
+        <td><%= document.user.username %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    什么都没有找到，请换个关键词试试？
+  <% end %>
+
 </table>

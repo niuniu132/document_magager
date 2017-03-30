@@ -17,7 +17,9 @@ class DocumentsController < ApplicationController
     end
 
     def search
+      if @q.present?
 		    @documents = Document.ransack({:file_name_cont => @q}).result(:distinct => true)
+      end
 	  end
 
     def create
