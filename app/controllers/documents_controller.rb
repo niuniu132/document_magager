@@ -3,10 +3,11 @@ class DocumentsController < ApplicationController
     before_action :authenticate_user! , only: [:create, :edit, :update, :new]
 
     def index
-      @documents = Document.all.paginate(:page => params[:page], :per_page => 3)
+      @documents = Document.all.paginate(:page => params[:page], :per_page => 20)
+      @company_documents = Document.where(:file_type => '文件').paginate(:page => params[:page], :per_page => 20)
+      @institutions = Document.where(:file_type => '制度').paginate(:page => params[:page], :per_page => 20)
+      @softwares = Document.where(:file_type => '软件').paginate(:page => params[:page], :per_page => 20)
     end
-
-
 
     def user_index
       @documents = Document.where(:user_id => current_user.id)

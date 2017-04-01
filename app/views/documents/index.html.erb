@@ -12,25 +12,113 @@
   <!-- End Search -->
 <br>
 <br>
-<table class="table">
-  <thead>
-    <tr>
-      <td>文件名</td>
-      <td>创建时间</td>
-      <td>分类</td>
-      <td>发布者</td>
+<!-- tab start -->
 
-    </tr>
-  </thead>
-<% @documents.each do |document| %>
-  <tr>
-    <td><%= link_to(document.file_name, document.file_url) %></td>
-    <td><%= document.created_at %></td>
-    <td><%= document.file_type %></td>
-    <td><%= document.user.username %></td>
-  </tr>
-<% end %>
-</table>
-<div class="text-center">
-   <%= will_paginate @documents %>
+<div class="container">
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#all">全部</a></li>
+    <li><a data-toggle="tab" href="#company_document">文件</a></li>
+    <li><a data-toggle="tab" href="#institution">制度</a></li>
+    <li><a data-toggle="tab" href="#software">软件</a></li>
+  </ul>
+
+  <div class="tab-content">
+      <div id="all" class="tab-pane fade in active">
+          <table class="table">
+              <thead>
+                <tr>
+                  <td>文件名</td>
+                  <td>创建时间</td>
+                  <td>分类</td>
+                  <td>发布者</td>
+                </tr>
+              </thead>
+              <% @documents.each do |document| %>
+                <tr>
+                  <td><%= link_to(document.file_name, document.file_url) %></td>
+                  <td><%= document.created_at %></td>
+                  <td><%= document.file_type %></td>
+                  <td><%= document.user.username %></td>
+                </tr>
+              <% end %>
+          </table>
+          <div class="text-center">
+              <%= will_paginate @documents %>
+          </div>
+      </div>
+
+      <div id="company_document" class="tab-pane fade">
+          <table class="table">
+              <thead>
+                <tr>
+                  <td>文件名</td>
+                  <td>创建时间</td>
+                  <td>分类</td>
+                  <td>发布者</td>
+                </tr>
+              </thead>
+              <% @company_documents.each do |document| %>
+                <tr>
+                  <td><%= link_to(document.file_name, document.file_url) %></td>
+                  <td><%= document.created_at %></td>
+                  <td><%= document.file_type %></td>
+                  <td><%= document.user.username %></td>
+                </tr>
+              <% end %>
+          </table>
+          <div class="text-center">
+              <%= will_paginate @documents %>
+          </div>
+      </div>
+
+      <div id="institution" class="tab-pane fade">
+            <table class="table">
+              <thead>
+                <tr>
+                  <td>文件名</td>
+                  <td>创建时间</td>
+                  <td>分类</td>
+                  <td>发布者</td>
+                </tr>
+              </thead>
+              <% @institutions.each do |document| %>
+                <tr>
+                  <td><%= link_to(document.file_name, document.file_url) %></td>
+                  <td><%= document.created_at %></td>
+                  <td><%= document.file_type %></td>
+                  <td><%= document.user.username %></td>
+                </tr>
+              <% end %>
+          </table>
+          <div class="text-center">
+              <%= will_paginate @documents %>
+          </div>
+      </div>
+
+      <div id="software" class="tab-pane fade">
+            <table class="table">
+            <thead>
+              <tr>
+                <td>文件名</td>
+                <td>创建时间</td>
+                <td>分类</td>
+                <td>发布者</td>
+              </tr>
+            </thead>
+            <% @softwares.each do |document| %>
+              <tr>
+                <td><%= link_to(document.file_name, document.file_url) %></td>
+                <td><%= document.created_at %></td>
+                <td><%= document.file_type %></td>
+                <td><%= document.user.username %></td>
+              </tr>
+            <% end %>
+        </table>
+        <div class="text-center">
+            <%= will_paginate @documents %>
+        </div>
+      </div>
+  
 </div>
+<!-- tab end  -->

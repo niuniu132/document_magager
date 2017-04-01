@@ -1,4 +1,5 @@
 class ModifyPasswordController < ApplicationController
+    layout 'edit_password'
     before_action :authenticate_user!
 
     def edit
